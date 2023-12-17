@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- This declares the document type and version of HTML -->
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+<!-- The root HTML element, with language set to English and left-to-right direction -->
+  <head>
+    <!-- The head section of the HTML document -->
+    <meta charset="utf-8" />
+    <!-- Declares the character encoding of the document -->
+    <title>Chatbot in JavaScript | CodingNepal</title>
+    <!-- Sets the title of the webpage -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Links an external CSS file for styling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Sets the viewport for responsive web design -->
+    <!-- Google Fonts Link For Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <!-- Links a Google Font style for outlined symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+    <!-- Links a Google Font style for rounded symbols -->
+    <script src="script.js" defer></script>
+    <!-- Links an external JavaScript file, executed after the document is parsed -->
+  </head>
+  <body>
+    <!-- The body section of the HTML document -->
+    <div class="chatbot-container">
+      <!-- Container for the chatbot interface -->
+      <div class="show-chatbot">
+        <!-- Container to display the chatbot -->
+        <header>
+          <!-- Header section of the chat interface -->
+          <h2>Banking Knowledge Management Tool</h2>
+          <!-- Title for the chatbot -->
+        </header>
+        <ul class="chatbox">
+          <!-- Container for chat messages -->
+          <li class="chat incoming">
+            <!-- Represents an incoming chat message -->
+            <span class="material-symbols-outlined">smart_toy</span>
+            <!-- Symbol for an incoming message -->
+            <p>Hi there &#x1F36C;<br />How can I help you today?</p>
+            <!-- Text content of the incoming message -->
+          </li>
+        </ul>
+      </div>
+      <div class="chat-input">
+        <!-- Container for user input -->
+        <div class="input-container">
+          <!-- Input container for the text area and send button -->
+          <textarea
+            placeholder="Enter a message..."
+            spellcheck="false"
+            required
+          ></textarea>
+          <!-- Text area for user input -->
+          <span id="send-btn" class="material-symbols-rounded">send</span>
+          <!-- Symbol for sending a message -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
