@@ -16,12 +16,22 @@ body {
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
 }
+.top-container {
+  background-color: #4f9daf;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 
 header {
   text-align: center;
   padding: 20px;
-  border-radius: 30px;
-  background-color: #333;
+  border-radius: 20px;
+  background-color: #40a7c6;
   color: #fff;
 
   
@@ -33,14 +43,51 @@ header {
   background-color: white;
 
 }
+
+
 .container {
   height: 15cm;
   width: 25cm;
   border: 2px solid #333;
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: #fff;
   margin-top: 20px; /* Adjust as needed */
+  align-items: center;
   
+}
+/* Your existing CSS styles */
+
+/* Add media queries for different display sizes */
+@media screen and (max-width: 800px) {
+  /* Styles for screens with a maximum width of 800px */
+  .container {
+    width: 90%;
+   /* Adjust the width as needed for smaller screens */
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+  /* Styles for screens with a width between 801px and 1200px */
+  .container {
+    width: 70%; /* Adjust the width as needed for medium-sized screens */
+  }
+}
+
+/* Add more media queries as needed for other screen sizes */
+
+/* Your existing CSS styles */
+
+.logo-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000; /* Adjust the z-index as needed */
+}
+
+.logo-container img {
+  width: 100px; /* Adjust the width of the logo image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Optional: Add border-radius for rounded corners */
 }
 
 
