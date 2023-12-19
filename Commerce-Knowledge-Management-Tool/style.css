@@ -15,9 +15,11 @@ body {
   min-height: 100vh;
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
+  margin-top: 50px;
+  position: static;
 }
 .top-container {
-  background-color: #4f9daf;
+  background-color: #FF9F33;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -31,8 +33,9 @@ header {
   text-align: center;
   padding: 20px;
   border-radius: 20px;
-  background-color: #40a7c6;
+  background-color: #FF9F33;
   color: #fff;
+  margin-top: 60px;
 
   
 }
@@ -94,7 +97,7 @@ header {
 
 
 body {
-  background: #e3f2fd;
+  background: #FFE5B4fd;
 }
 .button-container {
   width: 55%;
@@ -136,7 +139,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #724ae8;
+  background: #FFE5B4fd;
   transition: all 0.2s ease;
 }
 body.show-chatbot .chatbot-toggler {
@@ -180,7 +183,7 @@ body.show-chatbot .chatbot {
   position: relative;
   text-align: center;
   color: #fff;
-  background: #724ae8;
+  background: #FFE5B4fd;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .chatbot header span {
@@ -237,7 +240,7 @@ header h2 {
   text-align: center;
   line-height: 32px;
   align-self: flex-end;
-  background: #724ae8;
+  background: #FF9F33;
   border-radius: 4px;
   margin: 0 10px 7px 0;
 }
@@ -248,7 +251,7 @@ header h2 {
   max-width: 75%;
   color: #fff;
   font-size: 0.95rem;
-  background: #724ae8;
+  background:#FF9F33;
 }
 .chatbox .incoming p {
   border-radius: 10px 10px 10px 0;
@@ -356,7 +359,7 @@ header h2 {
 
 .input-container #send-btn {
   margin-left: 10px; /* Adjust spacing between textarea and button */
-  color: #724ae8;
+  color: #FF9F33;
   cursor: pointer;
   font-size: 2rem;
 }
