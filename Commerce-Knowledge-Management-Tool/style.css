@@ -6,6 +6,47 @@
   font-family: "Poppins", sans-serif;
 }
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #333;
+  color: #fff;
+
+  
+}
+
+.head {
+  height: 100px;
+  width: 100%;
+  background-color: white;
+
+}
+.container {
+  height: 15cm;
+  width: 25cm;
+  border: 2px solid #333;
+  border-radius: 30px;
+  background-color: #fff;
+  margin-top: 20px; /* Adjust as needed */
+  
+}
+
+
+
+
+body {
   background: #e3f2fd;
 }
 .button-container {
@@ -24,6 +65,17 @@ body {
   margin-left: 15px;
   margin-top: 10px;
 }
+.chatbot .chatbox-container {
+  background-color: #fff; /* Set the background color to white */
+  border-radius: 20px; /* Set border-radius for curved edges */
+  overflow: hidden; /* Hide overflow content outside the container */
+}
+.chatbox-container .chatbox {
+  padding: 10px;
+  display: flex;
+  flex-direction: column-reverse; /* Reverse the order of the messages */
+}
+
 .chatbot-toggler {
   position: fixed;
   bottom: 30px;
@@ -95,12 +147,16 @@ body.show-chatbot .chatbot {
 header h2 {
   font-size: 1.4rem;
 }
+/* Increase the height and adjust padding for the chatbox */
 .chatbot .chatbox {
   overflow-y: auto;
-  height: 510px;
-  padding: 30px 20px 100px;
-
+  height: 80vh; /* Adjust the height as needed, for example, 80% of the viewport height */
+  padding: 30px 20px 20px; /* Adjust the padding as needed */
 }
+
+/* Adjust the position and dimensions of the chatbot container */
+
+
 .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
   width: 6px;
 }
@@ -196,16 +252,15 @@ header h2 {
     right: 20px;
     bottom: 20px;
   }
-  .chatbot {
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    border-radius: 0;
-    width: 100%;
+  .chatbox {
+    min-height: 500px; /* Set a maximum height for the chatbox */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
   }
   .chatbot .chatbox {
-    height: 90%;
-    padding: 25px 15px 100px;
+    overflow-y: auto;
+    height: calc(100% - 50px); /* Adjust the height considering the header and padding */
+    padding: 20px; /* Adjust the padding inside the container as needed */
   }
   .chatbot .chat-input {
     padding: 5px 15px;
@@ -217,32 +272,40 @@ header h2 {
 /* Style for the chatbot container */
 .chatbot-container {
   position: fixed;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30%;
-  height: 50%;
+  width: 60%; /* Adjust the width as needed */
+  height: 70%; /* Adjust the height as needed */
 }
-.chatbox{
-  max-height: 39pc;
-  overflow-y: scroll;
-  scrollbar-width: none;
+.chatbox {
+  min-height: 410px;
+  max-height: 410px; /* Set a maximum height for the chatbox */
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: thin; /* Thin scrollbar for Firefox */
 }
+
 .input-container {
   display: flex;
   align-items: center;
 }
 
-.input-container textarea {
-  flex: 1;
-  height: 55px; /* Adjust height as needed */
+
+.chat-input textarea {
+  height: 55px;
+  width: calc(100% - 15px); /* Adjust the width to leave space for padding */
   border: none;
   outline: none;
   resize: none;
+  max-height: 180px;
   padding: 15px;
   font-size: 0.95rem;
   border-radius: 10px;
+  background-color: #bcbbbb;
+
 }
+
+
 
 .input-container #send-btn {
   margin-left: 10px; /* Adjust spacing between textarea and button */
