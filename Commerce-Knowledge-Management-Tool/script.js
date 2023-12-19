@@ -15,7 +15,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
 const chatbox = document.querySelector(".chatbox");
 const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
@@ -79,7 +78,10 @@ const generateResponse = async (chatElement) => {
     // Your existing code for fetching data and displaying it
     async function fetchDataAndDisplay() {
       const lowerCaseMessage = userMessage.toLowerCase();
-      alert(lowerCaseMessage)// Read user input
+
+      // Remove or comment out the following line to avoid the alert message
+      // alert(lowerCaseMessage);
+
       if (!lowerCaseMessage) return;
 
       const id = ['41wUxM646z8yL1EtGGGc', 'BtCfal2Av0KCy52DijRn', 'MbZy2HDErVbZY8rP3uX0', 
@@ -93,7 +95,7 @@ const generateResponse = async (chatElement) => {
           const answer = docSnap.data()['answer'];
           messageElement.textContent = answer;
           scrollToBottom();
-          break  // Exit the loop after finding the first match
+          break;  // Exit the loop after finding the first match
         }
       }
 
@@ -101,7 +103,7 @@ const generateResponse = async (chatElement) => {
       chatInput.value = "";
     }
 
-    await fetchDataAndDisplay() // Wait for fetchDataAndDisplay to complete
+    await fetchDataAndDisplay(); // Wait for fetchDataAndDisplay to complete
   }
 };
 
