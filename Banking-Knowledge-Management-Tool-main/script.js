@@ -32,6 +32,26 @@ const createChatLi = (message, className) => {
 //   chatLi.querySelector("p").textContent = message;
 //   return chatLi;
 // };
+const startVoiceRecognition = () => {
+  const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+  recognition.lang = 'en-US';
+
+  recognition.onresult = (event) => {
+    let transcript = event.results[0][0].transcript;
+    
+    // Remove trailing full stop
+    transcript = transcript.replace(/\.$/, '').trim();
+    
+    chatInput.value = transcript;
+    handleChat(); // Process the voice input
+  };
+
+  recognition.start();
+};
+
+// Add a button to start voice recognition
+const voiceRecognitionBtn = document.querySelector(".voice-recognition-btn");
+voiceRecognitionBtn.addEventListener("click", startVoiceRecognition);
 
 const generateResponse = (chatElement) => {
   const messageElement = chatElement.querySelector("p");
@@ -653,4 +673,44 @@ sendChatBtn.addEventListener("click", handleChat);
 // Optionally, you can trigger voice output when the page loads
 document.addEventListener("DOMContentLoaded", () => {
   speak("Hi there! How can I help you?");
+});
+// Function to translate text using Google Cloud Translation API
+// Function to translate text using libretranslate API
+async function translateTextLibretranslate(text, targetLanguage) {
+  const apiUrl = 'http://127.0.0.1:5500/index.html'; // Replace with your libretranslate server URL
+
+  try {
+    // Use libretranslate API to translate text
+    const response = await fetch(`${apiUrl}?q=${encodeURIComponent(text)}&target=${targetLanguage}`);
+    const result = await response.json();
+
+    if (result && result[0] && result[0].detectedLanguage && result[0].translations) {
+      return result[0].translations[0].text;
+    } else {
+      throw new Error('Invalid response from libretranslate');
+    }
+  } catch (error) {
+    console.error('Translation error:', error);
+    throw error;
+  }
+}
+
+// Example usage in your chat application
+// Assuming you have a button with id 'translateButton'
+const translateButton = document.getElementById('translateButton');
+
+translateButton.addEventListener('click', async () => {
+  // Iterate through all chat messages and translate
+  const chatMessages = document.querySelectorAll('.chat p');
+  const targetLanguage = 'hi'; // Change this to the desired target language code
+
+  chatMessages.forEach(async (message) => {
+    const originalText = message.textContent;
+    try {
+      const translatedText = await translateTextLibretranslate(originalText, targetLanguage);
+      message.textContent = translatedText;
+    } catch (error) {
+      console.error('Translation error:', error);
+    }
+  });
 });

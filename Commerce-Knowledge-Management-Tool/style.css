@@ -56,6 +56,7 @@ header {
   background-color: #fff;
   margin-top: 20px; /* Adjust as needed */
   align-items: center;
+  position: fixed;
   
 }
 /* Your existing CSS styles */
